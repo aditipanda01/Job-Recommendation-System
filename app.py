@@ -24,7 +24,7 @@ st.set_page_config(
     layout="centered"
 )
 
-# ---- CSS FOR ANIMATED BACKGROUND (modern soft colors) ----
+# ---- CSS FOR ANIMATED BACKGROUND ----
 st.markdown(
     """
     <style>
@@ -39,6 +39,7 @@ st.markdown(
         background: linear-gradient(-45deg, #dbeafe, #ede9fe, #fff1f2, #fef9c3);
         background-size: 400% 400%;
         animation: gradientMove 18s ease infinite;
+        color: #000 !important; /* force all text to black */
     }
 
     /* Content overlay (glass effect) */
@@ -47,7 +48,7 @@ st.markdown(
         z-index: 1;
         padding: 40px;
         text-align: center;
-        color: #1e293b;
+        color: #000; /* black text */
         backdrop-filter: blur(12px);
         border-radius: 20px;
         background: rgba(255, 255, 255, 0.6);
@@ -56,14 +57,14 @@ st.markdown(
         margin: auto;
     }
 
-    h1, h2, label {
-        color: #1e293b;
+    h1, h2, label, .stMarkdown, .stText, .stSelectbox, .stButton {
+        color: #000 !important; /* all headings, labels, and widget text */
     }
 
     /* Button styling */
     .stButton>button {
         background: linear-gradient(90deg, #6366f1, #3b82f6);
-        color: white;
+        color: white !important;
         border-radius: 10px;
         padding: 0.6em 1.2em;
         border: none;
